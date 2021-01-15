@@ -1,0 +1,4 @@
+make:
+javac $(find . -name '*.java') -d classes -encoding "UTF-8"
+
+Si, me da paja usar ant
