@@ -15,7 +15,7 @@ import cl.pika.twitchbot.util.CmdCategory;
 //  de Inosagi, configurado para ello y todas sus necesidades ♡
 //////////////////////////////
 public class InoBot extends TwitchBot {
-    private static String BOT_VERSION = "v0.1";
+    private static String BOT_VERSION = "v0.2";
 
     //////////////////////////////
     //  ♡ CONFIGURACIONES BASICAS
@@ -130,10 +130,10 @@ public class InoBot extends TwitchBot {
         commands.put(_prefix + "cafe", kofi);
         
         /**
-         * >ig
+         * >ig / instagram
          * Muestra el instagram de Inosagi
          */
-        commands.put(_prefix + "ig", new ICommand(){
+        ICommand ig = new ICommand(){
             @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
             @Override public UserCategory getUser() { return UserCategory.USER; }
             @Override public String getDescripcion() { return ""; }
@@ -143,29 +143,32 @@ public class InoBot extends TwitchBot {
                 _msg += "Puedes ver mi arte en instagram <3 https://www.instagram.com/inosagi_art/";
                 sendToChat(_msg);
             }
-        });
+        };
+
+        commands.put(_prefix + "ig", ig);
+        commands.put(_prefix + "instagram", ig);
         
         /**
-         * >fa
+         * >fa / furaffinity
          * Link al furaffinity de la furra
          */
-        commands.put(_prefix + "fa", new ICommand(){
-            @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
-            @Override public UserCategory getUser() { return UserCategory.USER; }
-            @Override public String getDescripcion() { return ""; }
+        // commands.put(_prefix + "fa", new ICommand(){
+        //     @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
+        //     @Override public UserCategory getUser() { return UserCategory.USER; }
+        //     @Override public String getDescripcion() { return ""; }
             
-            @Override public void execute(String user, String msg, String tags) {
-                String _msg = "";
-                _msg += "Mira las furradas en mi pagina furra. https://www.furaffinity.net/user/inosagi/";
-                sendToChat(_msg);
-            }
-        });
+        //     @Override public void execute(String user, String msg, String tags) {
+        //         String _msg = "";
+        //         _msg += "Mira las furradas en mi pagina furra. https://www.furaffinity.net/user/inosagi/";
+        //         sendToChat(_msg);
+        //     }
+        // });
         
         /**
-         * >da
+         * >da / deviantart
          * Link al deviantart de la furra
          */
-        commands.put(_prefix + "da", new ICommand(){
+        ICommand da = new ICommand(){
             @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
             @Override public UserCategory getUser() { return UserCategory.USER; }
             @Override public String getDescripcion() { return ""; }
@@ -175,29 +178,32 @@ public class InoBot extends TwitchBot {
                 _msg += "¡Visita mi DeviantArt! https://www.deviantart.com/inosagi";
                 sendToChat(_msg);
             }
-        });
+        };
+
+        commands.put(_prefix + "da", da);
+        commands.put(_prefix + "deviantart", da);
         
         /**
          * >twitter
          * Link al twitter de la furra
          */
-        commands.put(_prefix + "twitter", new ICommand(){
-            @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
-            @Override public UserCategory getUser() { return UserCategory.USER; }
-            @Override public String getDescripcion() { return ""; }
+        // commands.put(_prefix + "twitter", new ICommand(){
+        //     @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
+        //     @Override public UserCategory getUser() { return UserCategory.USER; }
+        //     @Override public String getDescripcion() { return ""; }
             
-            @Override public void execute(String user, String msg, String tags) {
-                String _msg = "";
-                _msg += "¡Sigueme en Twitter! <3 https://twitter.com/inosagi";
-                sendToChat(_msg);
-            }
-        });
+        //     @Override public void execute(String user, String msg, String tags) {
+        //         String _msg = "";
+        //         _msg += "¡Sigueme en Twitter! <3 https://twitter.com/inosagi";
+        //         sendToChat(_msg);
+        //     }
+        // });
         
         /**
-         * >discord
+         * >discord / dc
          * Link al discord de la furra
          */
-        commands.put(_prefix + "discord", new ICommand(){
+        ICommand dc = new ICommand(){
             @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
             @Override public UserCategory getUser() { return UserCategory.USER; }
             @Override public String getDescripcion() { return ""; }
@@ -207,7 +213,10 @@ public class InoBot extends TwitchBot {
                 _msg += "¡Unete a nuestra comunidad! :D https://discord.gg/8vpvCHG";
                 sendToChat(_msg);
             }
-        });
+        };
+
+        commands.put(_prefix + "dc", dc);
+        commands.put(_prefix + "discord", dc);
 
         /**
          * >tablet / specs / tool
