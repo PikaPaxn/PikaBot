@@ -19,7 +19,7 @@ import java.net.URLConnection;
 //      ♡ GalaBot ♡
 //  Autor:      Pika
 //  Creado:     08-Julio-2018
-//  Modificado: 24-Noviembre-2020
+//  Modificado: 19-Febrero-2021
 //  Bot dedicado especificamente al stream
 //  de Galaxias, configurado para ello y todas sus necesidades ♡
 //
@@ -35,7 +35,7 @@ import java.net.URLConnection;
 //    ♡ Deceit
 //////////////////////////////
 public class GalaBot extends TwitchBot {
-    private static String BOT_VERSION = "v1.2.7";
+    private static String BOT_VERSION = "v1.2.8";
     
     //////////////////////////////
     //  ♡ CONFIGURACIONES BASICAS
@@ -580,7 +580,7 @@ public class GalaBot extends TwitchBot {
          * >ig
          * Comando que muestra el instagram de Galaxias
          */
-        commands.put(_prefix + "ig", new ICommand(){
+        ICommand ig = new ICommand(){
             @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
             @Override public UserCategory getUser() { return UserCategory.USER; }
             @Override public String getDescripcion() { return "Instagram."; }
@@ -592,7 +592,9 @@ public class GalaBot extends TwitchBot {
 
                 sendToChat(_msg);
             }
-        });
+        };
+        commands.put(_prefix + "ig", ig);
+        commands.put(_prefix + "instagram", ig);
 
         /**
          * >twitter
@@ -616,7 +618,7 @@ public class GalaBot extends TwitchBot {
          * >fb
          * Comando que muestra la fanpage de Galaxias
          */
-        commands.put(_prefix + "fb", new ICommand(){
+        ICommand fb = new ICommand(){
             @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
             @Override public UserCategory getUser() { return UserCategory.USER; }
             @Override public String getDescripcion() { return "Facebook."; }
@@ -628,7 +630,10 @@ public class GalaBot extends TwitchBot {
 
                 sendToChat(_msg);
             }
-        });
+        };
+        commands.put(_prefix + "fb", fb);
+        commands.put(_prefix + "facebook", fb);
+        commands.put(_prefix + "fanpage", fb);
 
         /**
          * >army
@@ -652,25 +657,27 @@ public class GalaBot extends TwitchBot {
          * >yt
          * Comando que muestra el youtube de Galaxias
          */
-        commands.put(_prefix + "yt", new ICommand(){
+        ICommand youtube = new ICommand(){
             @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
             @Override public UserCategory getUser() { return UserCategory.USER; }
             @Override public String getDescripcion() { return "Youtube."; }
             
             @Override public void execute(String user, String msg, String tags) {
                 String _msg = "";
-
+                
                 _msg += "Sigue mi canal de youtube para ver mis videos más recientes ---> www.youtube.com/galaxias galaaQueen";
-
+                
                 sendToChat(_msg);
             }
-        });
+        };
+        commands.put(_prefix + "yt", youtube);
+        commands.put(_prefix + "youtube", youtube);
         
         /**
          * >discord
          * Comando que muestra el discord de Galaxias
          */
-        commands.put(_prefix + "dc", new ICommand(){
+        ICommand disc = new ICommand(){
             @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
             @Override public UserCategory getUser() { return UserCategory.USER; }
             @Override public String getDescripcion() { return "Discord."; }
@@ -682,7 +689,10 @@ public class GalaBot extends TwitchBot {
 
                 sendToChat(_msg);
             }
-        });
+        };
+        commands.put(_prefix + "dc", disc);
+        commands.put(_prefix + "disc", disc);
+        commands.put(_prefix + "discord", disc);
 
         /**
          * >paypal
@@ -733,6 +743,60 @@ public class GalaBot extends TwitchBot {
                 String _msg = "";
 
                 _msg += "Sigue a Gorilla Setups, la familia más linda ---> www.instagram.com/gorilla.setups galaaQueen";
+
+                sendToChat(_msg);
+            }
+        });
+
+        /**
+         * >creador
+         * Codigo de Creador
+         */
+        commands.put(_prefix + "creador", new ICommand(){
+            @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
+            @Override public UserCategory getUser() { return UserCategory.USER; }
+            @Override public String getDescripcion() { return "Creadora."; }
+            
+            @Override public void execute(String user, String msg, String tags) {
+                String _msg = "";
+
+                _msg += "Recuerda que soy creadora de contenido para Epic Games y puedes usar mi código para ayudarme: \"GALAXIAS\" en las tiendas de cualquier juego galaaGG";
+
+                sendToChat(_msg);
+            }
+        });
+
+        /**
+         * >modelaje
+         * Mensaje de modelaje
+         */
+        commands.put(_prefix + "modelaje", new ICommand(){
+            @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
+            @Override public UserCategory getUser() { return UserCategory.USER; }
+            @Override public String getDescripcion() { return "Modelaje."; }
+            
+            @Override public void execute(String user, String msg, String tags) {
+                String _msg = "";
+
+                _msg += "Recuerden que ahora soy modelo (y embajadora) para la tiendita de instagram ---> https://www.instagram.com/boutique_ave_fenix/ || Puedes ir a revisar sus diseños, están hermosísimos galaaQueen";
+
+                sendToChat(_msg);
+            }
+        });
+
+        /**
+         * >sub
+         * Promocionar los subs
+         */
+        commands.put(_prefix + "sub", new ICommand(){
+            @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
+            @Override public UserCategory getUser() { return UserCategory.USER; }
+            @Override public String getDescripcion() { return "Sub."; }
+            
+            @Override public void execute(String user, String msg, String tags) {
+                String _msg = "";
+
+                _msg += "Si estás pensando en ser sub de Galaxias, te comento que te unirás a la familia de aliens más linda, con beneficios como jugar normals/rankeds con subs y además un carrete por discord 1 vez al mes. También, de vez en cuando, aleatoriamente hay sorteos en los streams, y obviamente, podrás usar los lindos emotes de Galaxias en todos los canales de twitch, ¿qué mejor? || Suscríbete en ---> https://www.twitch.tv/products/galaaxias galaaHype";
 
                 sendToChat(_msg);
             }
