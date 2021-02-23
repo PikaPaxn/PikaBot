@@ -802,6 +802,24 @@ public class GalaBot extends TwitchBot {
             }
         });
 
+        /**
+         * >PC
+         * Stats del pc de la Galita
+         */
+        commands.put(_prefix + "pc", new ICommand(){
+            @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
+            @Override public UserCategory getUser() { return UserCategory.USER; }
+            @Override public String getDescripcion() { return "PC."; }
+            
+            @Override public void execute(String user, String msg, String tags) {
+                String _msg = "";
+
+                _msg += "CPU: i5 10400F || RAM: 2X8 Gail RGB 3200mhz || Fuente: CoolerMaster 750 80PLUS Bronce || Gabinete: Kolink Void RGB ||  GPU: IGame 1070Ti || SSD: 240GB || HDD: 1TB || Ty Gorilla Setups galaaQueen";
+
+                sendToChat(_msg);
+            }
+        });
+
         //////////////////////////////
         //  ♡ GENERAL
         //////////////////////////////
