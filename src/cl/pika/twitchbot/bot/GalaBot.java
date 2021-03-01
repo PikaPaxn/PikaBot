@@ -1135,6 +1135,24 @@ public class GalaBot extends TwitchBot {
                 sendToChat(_msg);
             }
         });
+
+        /**
+         * >fauno
+         * IDK
+         */
+        commands.put(_prefix + "fauno", new ICommand(){
+            @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
+            @Override public UserCategory getUser() { return UserCategory.USER; }
+            @Override public String getDescripcion() { return "Fauno."; }
+            
+            @Override public void execute(String user, String msg, String tags) {
+                String _msg = "";
+
+                _msg += "26 de puntuación de combate, 7 de economía, 1 kill, 18 muertes, 0 asistencias.";
+
+                sendToChat(_msg);
+            }
+        });
         
          
     }
