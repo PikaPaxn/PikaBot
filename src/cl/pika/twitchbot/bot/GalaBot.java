@@ -766,23 +766,23 @@ public class GalaBot extends TwitchBot {
             }
         });
 
-        /**
-         * >modelaje
-         * Mensaje de modelaje
-         */
-        commands.put(_prefix + "modelaje", new ICommand(){
-            @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
-            @Override public UserCategory getUser() { return UserCategory.USER; }
-            @Override public String getDescripcion() { return "Modelaje."; }
+        // /**
+        //  * >modelaje
+        //  * Mensaje de modelaje
+        //  */
+        // commands.put(_prefix + "modelaje", new ICommand(){
+        //     @Override public CmdCategory getCategory() { return CmdCategory.GENERAL; }
+        //     @Override public UserCategory getUser() { return UserCategory.USER; }
+        //     @Override public String getDescripcion() { return "Modelaje."; }
             
-            @Override public void execute(String user, String msg, String tags) {
-                String _msg = "";
+        //     @Override public void execute(String user, String msg, String tags) {
+        //         String _msg = "";
 
-                _msg += "Recuerden que ahora soy modelo (y embajadora) para la tiendita de instagram ---> https://www.instagram.com/boutique_ave_fenix/ || Puedes ir a revisar sus diseños, están hermosísimos galaaQueen";
+        //         _msg += "Recuerden que ahora soy modelo (y embajadora) para la tiendita de instagram ---> https://www.instagram.com/boutique_ave_fenix/ || Puedes ir a revisar sus diseños, están hermosísimos galaaQueen";
 
-                sendToChat(_msg);
-            }
-        });
+        //         sendToChat(_msg);
+        //     }
+        // });
 
         /**
          * >sub
@@ -1094,7 +1094,7 @@ public class GalaBot extends TwitchBot {
             @Override public void execute(String user, String msg, String tags) {
                 String _msg = "";
 
-                _msg += "0,6 aim ; 1,5 scope || 800 DPI galaaGG";
+                _msg += "0,4 aim ; 1 scope || 800 DPI galaaGG";
 
                 sendToChat(_msg);
             }
