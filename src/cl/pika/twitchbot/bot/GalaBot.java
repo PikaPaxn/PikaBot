@@ -916,7 +916,7 @@ public class GalaBot extends TwitchBot {
                     _msg = "Comando no disponible temporalmente. galaaSad";
                 } else {
                     String _otroUser = getActiveUsers().get(rand.nextInt(getActiveUsers().size()));
-                    _msg += user + " le ha dado un guamazo a " + _otroUser + " galaaTilt";
+                    _msg += user + " le ha dado un guamazo a " + _otroUser + " galaaRage";
                 }
 
                 sendToChat(_msg);
@@ -1022,7 +1022,7 @@ public class GalaBot extends TwitchBot {
             @Override public void execute(String user, String msg, String tags) {
                 String _msg = "";
 
-                _msg += "Nonono, no es Gaming House, es Gorilla House galaaTilt";
+                _msg += "Nonono, no es Gaming House, es Gorilla House galaaRage";
 
                 sendToChat(_msg);
             }
